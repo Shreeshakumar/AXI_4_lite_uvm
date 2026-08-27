@@ -85,7 +85,7 @@ covv:
 pu:
 	@echo "\t\t\t\t$(GREEN)....................................................... PUSHING TO GIT REPO ......................................................$(RESET)"
 	git add --all
-	git commit -m 'commiting'
+	git commit -m 'commit via make'
 	git push |& $(COLORIZE)
 
 check:
