@@ -1,6 +1,6 @@
-`include "axi_pkg.sv"
-`include "axi_interface.sv"
-`include "../design/axi_rtl.sv"
+`include "src/verification/axi_pkg.sv"
+`include "src/verification/axi_interface.sv"
+`include "src/design/axi_rtl.sv"
 
 module axi_top();       
 	import uvm_pkg::*;
@@ -21,6 +21,6 @@ module axi_top();
  	initial
 	begin
 		uvm_config_db#(virtual axi_interface)::set(null,"*","vif",INF);
-	    run_test();
+	    run_test("test_reset");
 	end
 endmodule

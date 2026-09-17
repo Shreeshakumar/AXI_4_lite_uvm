@@ -1,6 +1,6 @@
-QUESTA := /home/share/questa.csh
+QUESTA := /fetools/synopsys/source/source.sh
 SHELL := /bin/csh
-T ?= axi_test
+T ?= "test_reset"
 V ?= UVM_NONE
 UCDB ?= $(T)
 
@@ -45,42 +45,17 @@ cc:
 com:
 	@echo "\t\t\t\t$(RED)........................................................ COMPILING CODE .........................................................$(RESET)"
 	source $(QUESTA)
-	vlog -sv +acc +cover +fcover -l src/simulation/log_file.log src/verification/axi_top.sv |& $(COLORIZE)
+	vcs -V -R -full64 -sverilog +v2k +UVM_TESTNAME=test_reset +UVM_VERBOSITY=UVM_MEDIUM -debug_access+all -ntb_opts uvm-1.2 src/verification/axi_top.sv -o src/simulation/output1 -l src/simulation/vcs.log -cm line+tgl+cond+fsm+branch |& $(COLORIZE)
 	
 sim:
 	@echo "\t\t\t\t$(CYAN)................................................... SIMULATING TEST = $(TEST) ...................................................$(RESET)"
 	source $(QUESTA)
-	vsim -vopt work.alu_top -voptargs=+acc=npr +UVM_TESTNAME=$(T) +UVM_VERBOSITY=$(V) -assertdebug -l src/simulation/log_file.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll src/simulation/ucdb_file.ucdb; run -all; exit" |& $(COLORIZE)
+	./output1 |& $(COLORIZE)
 
 cov:
 	@echo "\t\t\t\t$(MAGENTA).................................................... CREATING COVERAGE REPORT ...................................................$(RESET)"
 	source $(QUESTA)
-	vcover report -html src/simulation/ucdb_file.ucdb -htmldir src/simulation/covReport -details |& $(COLORIZE)
-	
-regression:
-	@echo "$(GREEN)==================== STARTING REGRESSION ====================$(RESET)"
-	make sim T=test_reset V=$(V) UCDB=test_reset
-	make sim T=test_arithmetic V=$(V) UCDB=test_arithmetic
-	make sim T=test_arithmetic_max V=$(V) UCDB=test_arithmetic_max
-	make sim T=test_arithmetic_min V=$(V) UCDB=test_arithmetic_min
-	make sim T=test_logical V=$(V) UCDB=test_logical
-	make sim T=test_logical_max V=$(V) UCDB=test_logical_max
-	make sim T=test_logical_min V=$(V) UCDB=test_logical_min
-	make sim T=test_err_cycle V=$(V) UCDB=test_err_cycle
-	make sim T=test_cycle V=$(V) UCDB=test_cycle
-	@echo "$(GREEN)==================== REGRESSION COMPLETE ====================$(RESET)"
-	
-merge_cov:
-	@echo "$(YELLOW)==================== MERGING COVERAGE ====================$(RESET)"
-	source $(QUESTA)
-	vcover merge src/simulation/regression.ucdb src/simulation/regression/*.ucdb |& $(COLORIZE)
-	
-covv:
-	@echo "\t\t\t\t$(MAGENTA).................................................... CREATING COVERAGE REPORT ...................................................$(RESET)"
-	source $(QUESTA)
-	vcover report -html src/simulation/regression.ucdb \
-		-htmldir src/simulation/covReport \
-		-details |& $(COLORIZE)
+	verdi -cov output1.vdb |& $(COLORIZE)
 	
 pu:
 	@echo "\t\t\t\t$(GREEN)....................................................... PUSHING TO GIT REPO ......................................................$(RESET)"

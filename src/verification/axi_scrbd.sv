@@ -16,12 +16,12 @@ class axi_scrbd extends uvm_scoreboard;
 	endfunction
 
 	task run_phase(uvm_phase phase);
-		reff =new;	p =new; q.push_back(reff);  reff =new; p.res='d0;
+		reff =new;	p =new; q.push_back(reff);  reff =new; ;
 		
-		begin  end
 		
-		forever	begin	in_txn = new;	inp_mon_fifo.get(in_txn); 	q.push_back(in_txn);
-      		
+		forever	begin	in_txn = new;	act_mon_fifo.get(in_txn); 	q.push_back(in_txn);
+      	in_txn.print_both(in_txn , in_txn);
+      	$display();
     	end
 	endtask
 	
@@ -39,7 +39,7 @@ class axi_scrbd extends uvm_scoreboard;
       	if(reff.ARREADY !== ch.ARREADY)	begin $write(" ARREADY "); 	fail_count++; check=0; end else	pass_count++;
       	
 	   	if(reff.RDATA 	!== ch.RDATA)	begin $write(" RDATA "); 	fail_count++; check=0; end else	pass_count++;
-        if(reff.PRESP 	!== ch.PRESP)	begin $write(" PRESP "); 	fail_count++; check=0; end else pass_count++;
+        if(reff.RRESP 	!== ch.RRESP)	begin $write(" RRESP "); 	fail_count++; check=0; end else pass_count++;
         if(reff.RVALID 	!== ch.RVALID)	begin $write(" RVALID "); 	fail_count++; check=0; end else pass_count++;
         
 	   	if (check) 		begin $write("\tMATCH"); pass++; end else begin $write("  MISMATCH"); fail++; end

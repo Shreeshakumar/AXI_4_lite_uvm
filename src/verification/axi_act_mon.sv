@@ -29,26 +29,26 @@ class axi_act_mon extends uvm_monitor;
 
  	virtual task collect_input_monitor();
 		act_mon=trans::type_id::create("act_mon");
-        @(vif.act_mon_cb);
+        @(vif.mon_cb);
         `uvm_info("INPUT_MONITOR","INPUT_MONITOR",UVM_HIGH)
         
-			act_mon.ARESETn   	= vif.act_mon_cb.ARESETn; 
+			act_mon.ARESETn   	= vif.mon_cb.ARESETn; 
 			
-			act_mon.AWADDR      = vif.act_mon_cb.AWADDR; 
-	    	act_mon.AWPORT 		= vif.act_mon_cb.AWPORT;
-	    	act_mon.AWVALID     = vif.act_mon_cb.AWVALID;
+			act_mon.AWADDR      = vif.mon_cb.AWADDR; 
+	    	act_mon.AWPROT 		= vif.mon_cb.AWPROT;
+	    	act_mon.AWVALID     = vif.mon_cb.AWVALID;
 	    	
-	    	act_mon.WDATA      	= vif.act_mon_cb.WDATA; 
-	    	act_mon.WSTRB 		= vif.act_mon_cb.WSTRB;
-	    	act_mon.WVALID     	= vif.act_mon_cb.WVALID;
+	    	act_mon.WDATA      	= vif.mon_cb.WDATA; 
+	    	act_mon.WSTRB 		= vif.mon_cb.WSTRB;
+	    	act_mon.WVALID     	= vif.mon_cb.WVALID;
 
-	   		act_mon.BREADY   	= vif.act_mon_cb.BREADY;
+	   		act_mon.BREADY   	= vif.mon_cb.BREADY;
 	   		
-	   		act_mon.ARADDR      = vif.act_mon_cb.ARADDR; 
-	    	act_mon.ARPORT 		= vif.act_mon_cb.ARPORT;
-	    	act_mon.ARVALID     = vif.act_mon_cb.ARVALID;
+	   		act_mon.ARADDR      = vif.mon_cb.ARADDR; 
+	    	act_mon.ARPROT 		= vif.mon_cb.ARPROT;
+	    	act_mon.ARVALID     = vif.mon_cb.ARVALID;
 	    	
-	    	act_mon.RREADY     	= vif.act_mon_cb.RREADY;
+	    	act_mon.RREADY     	= vif.mon_cb.RREADY;
 	   		
 	    act_mon_port.write(act_mon);
 	endtask

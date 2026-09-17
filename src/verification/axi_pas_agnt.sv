@@ -2,7 +2,7 @@ class axi_pas_agnt extends uvm_agent;
 	`uvm_component_utils(axi_pas_agnt)
 
 	axi_pas_mon pas_mon_h;
-    axi_config `m_cfg;
+    axi_config m_cfg;
 
    	function new(string name="axi_pas_agnt",uvm_component parent);
 		super.new(name,parent);

@@ -1,8 +1,8 @@
 class axi_env extends uvm_env;
 	`uvm_component_utils(axi_env)
  
- 	axi_act_agent 	act_agt_h;
- 	axi_pas_agent 	pas_agt_h;
+ 	axi_act_agnt 	act_agt_h;
+ 	axi_pas_agnt 	pas_agt_h;
  	axi_scrbd 		sb_h;
  	axi_subr 		sub_h;
 
@@ -16,8 +16,8 @@ class axi_env extends uvm_env;
 		super.build_phase(phase);
 
  		if(!uvm_config_db#(axi_config)::get(this,"","axi_config",m_cfg))
-			`uvm_fatal(get_type_name(),"Output_agt Getting Failed")`
-
+			`uvm_fatal(get_type_name(),"Output_agt Getting Failed")
+			
   		act_agt_h	=axi_act_agnt	::type_id::create("act_agt_h",this);
   		pas_agt_h	=axi_pas_agnt	::type_id::create("pas_agt_h",this);
   		sb_h		=axi_scrbd		::type_id::create("sb_h",this);

@@ -31,7 +31,7 @@ class axi_test extends uvm_test;
 	begin
 		rst_seq ss;
 		ss=rst_seq::type_id::create("ss");
-		ss.start(env_h.inp_agt_h.seqr_h);
+		ss.start(env_h.act_agt_h.seqr_h);
 	end
 	endtask
 endclass

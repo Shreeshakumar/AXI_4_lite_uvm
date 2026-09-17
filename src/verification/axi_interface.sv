@@ -10,8 +10,8 @@ interface axi_interface(input bit ACLK);
   	logic 					  	AWREADY;
   
   	//WRITE data channel
-  	logic [DATA_WIDTH-1:0]	  	WDATA;
-  	logic [(DATA_WIDTH/8)-1:0]  WSTRB;
+  	logic [`DATA_WIDTH-1:0]	  	WDATA;
+  	logic [(`DATA_WIDTH/8)-1:0]  WSTRB;
   	logic   					WVALID;
   	logic 					  	WREADY;
   
@@ -21,13 +21,13 @@ interface axi_interface(input bit ACLK);
   	logic 					  	BREADY;
   
   	//READ address channel
-  	logic [ADDR_WIDTH-1:0]	  	ARADDR;
-  	logic [1:0]  				ARPROT;
+  	logic [`ADDR_WIDTH-1:0]	  	ARADDR;
+  	logic [2:0]  				ARPROT;
   	logic 					 	ARVALID;
   	logic 					 	ARREADY;
   
   	//READ data channel
-  	logic [DATA_WIDTH-1:0] 	  	RDATA;
+  	logic [`DATA_WIDTH-1:0] 	  	RDATA;
   	logic [1:0]   				RRESP;
   	logic					 	RVALID;
  	logic 					  	RREADY;
@@ -42,7 +42,7 @@ interface axi_interface(input bit ACLK);
     	output RREADY;						//READ data channel
   	endclocking
 
-  	clocking mon_cb @(posedge clk);
+  	clocking mon_cb @(posedge ACLK);
     	default input #0;
     	input ARESETn;								//reset
     	input AWADDR, AWPROT, AWVALID, AWREADY;		//WRITE address chhannel
