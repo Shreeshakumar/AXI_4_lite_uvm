@@ -1,0 +1,14 @@
+Command: vcs -full64 -sverilog -ntb_opts uvm -debug_access+all +incdir+/fetools/work_area/frontend/Batch_11/shreeshakumar/DV_workspace/DV_projects/AXI_4_lite/src/verification \
+-cm line+cond+fsm+tgl+branch -cm_dir src/simulation/coverage/simv.vdb -Mdir=src/simulation/csrc \
+/fetools/work_area/frontend/Batch_11/shreeshakumar/DV_workspace/DV_projects/AXI_4_lite/src/verification/axi_top.sv \
+-top axi_top -o src/simulation/simv -l src/simulation/logs/compile.log
+                         Chronologic VCS (TM)
+      Version Q-2020.03-SP2-8_Full64 -- Tue Sep 22 16:10:21 2026
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+CPU time: .182 seconds to compile

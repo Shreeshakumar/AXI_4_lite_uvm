@@ -1,37 +1,40 @@
 class trans extends uvm_sequence_item;
 	`uvm_object_utils(trans)
 
+  rand bit [1:0] txn_sel;
+  rand bit [19:0] wait_cfg_vector;
+  
 	//reset
 	rand 	bit						ARESETn;
 	
 	//AXI WRITE ADDRESS
  	rand 	bit	[`ADDR_WIDTH-1:0]	AWADDR;
  	rand 	bit	[2:0]				AWPROT;
- 	rand 	bit						AWVALID;
+ 		 	bit						AWVALID; ////
  		 	bit						AWREADY;
  	
  	//AXI WRITE DATA
  	rand 	bit	[`DATA_WIDTH-1:0]	WDATA;
  	rand 	bit	[(`DATA_WIDTH/8)-1:0] WSTRB;
- 	rand 	bit						WVALID;
+ 		 	bit						WVALID; ////
  		 	bit						WREADY;
  	
  	//AXI WRITE RESPONSE
  			bit	[1:0]				BRESP;
  		 	bit						BVALID;
- 	rand 	bit						BREADY;
+ 		 	bit						BREADY; ////
  	
  	//AXI READ ADDRESS
  	rand 	bit	[`ADDR_WIDTH-1:0]	ARADDR;
  	rand 	bit	[2:0]				ARPROT;
- 	rand 	bit						ARVALID;
+ 		 	bit						ARVALID; ////
  		 	bit						ARREADY;
  	
  	//AXI READ DATA
  		 	bit	[`DATA_WIDTH-1:0]	RDATA;
  		 	bit	[1:0]				RRESP;
  		 	bit						RVALID;
-	rand 	bit						RREADY;
+		 	bit						RREADY;	////
  	
  	/*constraint temp{	soft OA dist {'d0 := 2, 'hFF := 2, ['h1:'hFE] :/ 6};
  						soft OB dist {'d0 := 2, 'hFF := 2, ['h1:'hFE] :/ 6}; }
@@ -116,7 +119,8 @@ class trans extends uvm_sequence_item;
 	endfunction
 	
 	virtual function void print_both(trans r, trans o);
-		$write("  %b:%b | %08h:%08h %03b:%03b %b:%b %b:%b | %08h:%08h %04b:%04b %b:%b %b:%b | %02b:%02b %b:%b %b:%b | %08h:%08h %03b:%03b %b:%b %b:%b | %08h:%08h %02b:%02b %b:%b %b:%b ",
+		$write("  %02b:%02b %02d:%02d || %b:%b | %08h:%08h %03b:%03b %b:%b %b:%b | %08h:%08h %04b:%04b %b:%b %b:%b | %02b:%02b %b:%b %b:%b | %08h:%08h %03b:%03b %b:%b %b:%b | %08h:%08h %02b:%02b %b:%b %b:%b ",
+         			r.txn_sel, o.txn_sel, r.wait_cfg_vector, o.wait_cfg_vector,
          			r.ARESETn, o.ARESETn, 	r.AWADDR,o.AWADDR, r.AWPROT,o.AWPROT, r.AWVALID,o.AWVALID, r.AWREADY,o.AWREADY, 	r.WDATA, o.WDATA, r.WSTRB, o.WSTRB, r.WVALID, o.WVALID, r.WREADY, o.WREADY, 			 								r.BRESP, o.BRESP,  r.BVALID,o.BVALID, r.BREADY, o.BREADY, 							r.ARADDR,o.ARADDR,r.ARPROT,o.ARPROT,r.ARVALID,o.ARVALID,r.ARREADY,o.ARREADY, 												r.RDATA, o.RDATA,  r.RRESP, o.RRESP,  r.RVALID, o.RVALID, r.RREADY,o.RREADY );
 	endfunction
 	

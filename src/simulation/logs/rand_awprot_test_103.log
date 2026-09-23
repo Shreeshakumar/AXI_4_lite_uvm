@@ -1,0 +1,73 @@
+Command: /fetools/work_area/frontend/Batch_11/shreeshakumar/DV_workspace/DV_projects/AXI_4_lite/src/simulation/./simv +UVM_TESTNAME=rand_awprot_test +ntb_random_seed=103 -cm line+cond+fsm+tgl+branch -cm_dir coverage/rand_awprot_test_103.vdb -l logs/rand_awprot_test_103.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 22 09:25 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test rand_awprot_test...
+________________________________________________________________________________________________________________________________________________________________
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 65: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 3, Exp: 2 | act 0, exp 0
+UVM_ERROR src/verification/axi_scrbd.sv(38) @ 65: uvm_test_top.env_h.sb_h [SCB_FAIL] During Write Mismatch at Addr 60ba5cdb. Act Data: b5e94917, Exp Data: b5e94917
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 93: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 3, Exp: 2 | act 0, exp 0
+UVM_ERROR src/verification/axi_scrbd.sv(38) @ 93: uvm_test_top.env_h.sb_h [SCB_FAIL] During Write Mismatch at Addr f9bcf17b. Act Data: ff18f390, Exp Data: ff18f390
+0
+1
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 327: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 3, Exp: 2 | act 0, exp 0
+UVM_ERROR src/verification/axi_scrbd.sv(38) @ 327: uvm_test_top.env_h.sb_h [SCB_FAIL] During Write Mismatch at Addr 70f71e1f. Act Data: 9b7c113c, Exp Data: 9b7c113c
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 385: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 3, Exp: 2 | act 0, exp 0
+UVM_ERROR src/verification/axi_scrbd.sv(38) @ 385: uvm_test_top.env_h.sb_h [SCB_FAIL] During Write Mismatch at Addr 5471ca62. Act Data: 27e7ab8a, Exp Data: 27e7ab8a
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 483: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 3, Exp: 2 | act 0, exp 0
+UVM_ERROR src/verification/axi_scrbd.sv(38) @ 483: uvm_test_top.env_h.sb_h [SCB_FAIL] During Write Mismatch at Addr 983f08ff. Act Data: 69cfe0f4, Exp Data: 69cfe0f4
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 555: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 3, Exp: 2 | act 0, exp 0
+UVM_ERROR src/verification/axi_scrbd.sv(38) @ 555: uvm_test_top.env_h.sb_h [SCB_FAIL] During Write Mismatch at Addr 1c3fbea7. Act Data: 92b6e095, Exp Data: 92b6e095
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 813: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 3, Exp: 2 | act 0, exp 0
+UVM_ERROR src/verification/axi_scrbd.sv(38) @ 813: uvm_test_top.env_h.sb_h [SCB_FAIL] During Write Mismatch at Addr dfa11177. Act Data: 80bf117b, Exp Data: 80bf117b
+0
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 5001: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO src/verification/axi_subr.sv(72) @ 5001: uvm_test_top.env_h.sub_h [COV] ALU Input Coverage: 39.58%
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    3
+UVM_WARNING :    0
+UVM_ERROR :   14
+UVM_FATAL :    0
+** Report counts by id
+[COV]     1
+[RNTST]     1
+[SCB_FAIL]    14
+[TEST_DONE]     1
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time                 5001
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 5001
+CPU Time:      0.850 seconds;       Data structure size:   0.6Mb
+Tue Sep 22 09:25:37 2026

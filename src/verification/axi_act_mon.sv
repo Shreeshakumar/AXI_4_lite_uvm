@@ -23,14 +23,14 @@ class axi_act_mon extends uvm_monitor;
  	task run_phase(uvm_phase phase);
 		forever begin
 	    	collect_input_monitor();
-			`uvm_info("INPUT_MONITOR",$sformatf("Input MONITOR\n%s",act_mon.sprint()),UVM_DEBUG)
+			//`uvm_info("INPUT_MONITOR",$sformatf("Input MONITOR\n%s",act_mon.sprint()),UVM_DEBUG)
 		end		    
  	endtask
 
  	virtual task collect_input_monitor();
 		act_mon=trans::type_id::create("act_mon");
         @(vif.mon_cb);
-        `uvm_info("INPUT_MONITOR","INPUT_MONITOR",UVM_HIGH)
+        //`uvm_info("INPUT_MONITOR","INPUT_MONITOR",UVM_HIGH)
         
 			act_mon.ARESETn   	= vif.mon_cb.ARESETn; 
 			
@@ -50,7 +50,7 @@ class axi_act_mon extends uvm_monitor;
 	    	
 	    	act_mon.RREADY     	= vif.mon_cb.RREADY;
 	   		
-	    act_mon_port.write(act_mon);
+	    //act_mon_port.write(act_mon);
 	endtask
 endclass
 

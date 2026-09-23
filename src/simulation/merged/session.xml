@@ -1,0 +1,37 @@
+<session version="1.1" release="Q-2020.03-SP2-8" timestp="2026-09-22 03:56:09 GMT">
+  <info>
+    <attr name="datetime" value="Tue Sep 22 09:26:12 2026
+"/>
+    <attr name="command" value="urg -dir coverage/aw_addr_retain_test_101.vdb coverage/aw_addr_retain_test_102.vdb coverage/aw_addr_retain_test_103.vdb coverage/aw_before_w_test_101.vdb coverage/aw_before_w_test_102.vdb coverage/aw_before_w_test_103.vdb coverage/aw_w_same_cycle_test_101.vdb coverage/aw_w_same_cycle_test_102.vdb coverage/aw_w_same_cycle_test_103.vdb coverage/axi_random_test_101.vdb coverage/axi_random_test_102.vdb coverage/axi_random_test_103.vdb coverage/axi_test_101.vdb coverage/axi_test_102.vdb coverage/axi_test_103.vdb coverage/backpressure_sequence_test_101.vdb coverage/backpressure_sequence_test_102.vdb coverage/backpressure_sequence_test_103.vdb coverage/bp_r_test_101.vdb coverage/bp_r_test_102.vdb coverage/bp_r_test_103.vdb coverage/con_br_independent_test_101.vdb coverage/con_br_independent_test_102.vdb coverage/con_br_independent_test_103.vdb coverage/invalid_read_test_101.vdb coverage/invalid_read_test_102.vdb coverage/invalid_read_test_103.vdb coverage/invalid_write_test_101.vdb coverage/invalid_write_test_102.vdb coverage/invalid_write_test_103.vdb coverage/rand_arprot_test_101.vdb coverage/rand_arprot_test_102.vdb coverage/rand_arprot_test_103.vdb coverage/rand_awprot_test_101.vdb coverage/rand_awprot_test_102.vdb coverage/rand_awprot_test_103.vdb coverage/rand_wdata_wstrb_test_101.vdb coverage/rand_wdata_wstrb_test_102.vdb coverage/rand_wdata_wstrb_test_103.vdb coverage/rd_ro_access_test_101.vdb coverage/rd_ro_access_test_102.vdb coverage/rd_ro_access_test_103.vdb coverage/rd_sequence_test_101.vdb coverage/rd_sequence_test_102.vdb coverage/rd_sequence_test_103.vdb coverage/rd_special_addr_test_101.vdb coverage/rd_special_addr_test_102.vdb coverage/rd_special_addr_test_103.vdb coverage/read_write_only_test_101.vdb coverage/read_write_only_test_102.vdb coverage/read_write_only_test_103.vdb coverage/simultaneous_read_write_test_101.vdb coverage/simultaneous_read_write_test_102.vdb coverage/simultaneous_read_write_test_103.vdb coverage/simv.vdb coverage/test_reset_101.vdb coverage/test_reset_102.vdb coverage/test_reset_103.vdb coverage/unaligned_read_test_101.vdb coverage/unaligned_read_test_102.vdb coverage/unaligned_read_test_103.vdb coverage/unaligned_write_test_101.vdb coverage/unaligned_write_test_102.vdb coverage/unaligned_write_test_103.vdb coverage/w_before_aw_test_101.vdb coverage/w_before_aw_test_102.vdb coverage/w_before_aw_test_103.vdb coverage/w_data_retain_test_101.vdb coverage/w_data_retain_test_102.vdb coverage/w_data_retain_test_103.vdb coverage/write_read_only_test_101.vdb coverage/write_read_only_test_102.vdb coverage/write_read_only_test_103.vdb coverage/wr_rw_access_test_101.vdb coverage/wr_rw_access_test_102.vdb coverage/wr_rw_access_test_103.vdb coverage/wr_special_addr_test_101.vdb coverage/wr_special_addr_test_102.vdb coverage/wr_special_addr_test_103.vdb coverage/wr_wo_access_test_101.vdb coverage/wr_wo_access_test_102.vdb coverage/wr_wo_access_test_103.vdb -report merged"/>
+    <attr name="top_instance" value="uvm_custom_install_verdi_recording,axi_top"/>
+  </info>
+  <hvp>
+    <datadef>
+      <metdef name="Line" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Cond" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Toggle" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="FSM" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Branch" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Group" type="percent" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Line" value="118/518" />
+    <metric name="Cond" value="83/100" />
+    <metric name="Toggle" value="872/904" />
+    <metric name="FSM" value="7/10" />
+    <metric name="Branch" value="62/102" />
+    <metric name="Group" value="100%" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+    <scope type="group" name="axi_pkg::axi_subr::axi4l_cg">
+      <metric name="Group" value="100%" />
+    </scope>
+  </scope>
+  <scope type="assert" name="Statistics">
+  </scope>
+  </old_coverage>
+</session>

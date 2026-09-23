@@ -1,0 +1,151 @@
+Command: /fetools/work_area/frontend/Batch_11/shreeshakumar/DV_workspace/DV_projects/AXI_4_lite/src/simulation/./simv +UVM_TESTNAME=rand_arprot_test +ntb_random_seed=101 -cm line+cond+fsm+tgl+branch -cm_dir coverage/rand_arprot_test_101.vdb -l logs/rand_arprot_test_101.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 22 09:25 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test rand_arprot_test...
+________________________________________________________________________________________________________________________________________________________________
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 381: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 381: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 3b35a603. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 537: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 537: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr d47d1385. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 697: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 697: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 2d621917. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 775: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 775: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 1c780ecf. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 875: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 875: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 5421484e. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 961: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 961: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 532b8ce6. Act Data: 0, Exp Data: 0
+0
+1
+1
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 1337: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 1337: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr b3ff4491. Act Data: 0, Exp Data: 0
+0
+1
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 1515: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 1515: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr a840630d. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 1553: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 1553: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 5b532165. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 1611: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 1611: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr cef4e20d. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 1835: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 1835: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 54813726. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 2185: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 2185: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr cd1dfaf1. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 2385: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 2385: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 44865e07. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 2541: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 2541: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 87936231. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 2975: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 2975: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr f9f3d9df. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 3081: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 3081: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 2fe89299. Act Data: 0, Exp Data: 0
+0
+1
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 3367: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 3367: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr cb9d90f6. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 3485: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 3485: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr e2c9d292. Act Data: 0, Exp Data: 0
+0
+1
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 3711: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 3711: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 4e0878ea. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 3827: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 3827: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr c30f302a. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 3967: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 3967: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 9bc9b75e. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4089: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4089: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr c2ba075e. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4203: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4203: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr f3ecb7c3. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4295: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4295: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr f80d4209. Act Data: 0, Exp Data: 0
+0
+1
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4395: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4395: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 46cb1a55. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4413: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4413: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr d239f4b5. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4473: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4473: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 6a92c70a. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4833: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4833: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr a9c5bc55. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4857: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4857: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 46274507. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4919: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4919: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr 1ec73211. Act Data: 0, Exp Data: 0
+0
+UVM_ERROR src/verification/axi_scrbd.sv(33) @ 4935: uvm_test_top.env_h.sb_h [SCB_FAIL] RESP Mismatch. Act: 0, Exp: 0 | act 3, exp 2
+UVM_ERROR src/verification/axi_scrbd.sv(35) @ 4935: uvm_test_top.env_h.sb_h [SCB_FAIL] During Read Mismatch at Addr c514f2eb. Act Data: 0, Exp Data: 0
+0
+1
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 5001: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO src/verification/axi_subr.sv(72) @ 5001: uvm_test_top.env_h.sub_h [COV] ALU Input Coverage: 22.92%
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    3
+UVM_WARNING :    0
+UVM_ERROR :   62
+UVM_FATAL :    0
+** Report counts by id
+[COV]     1
+[RNTST]     1
+[SCB_FAIL]    62
+[TEST_DONE]     1
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time                 5001
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 5001
+CPU Time:      0.850 seconds;       Data structure size:   0.6Mb
+Tue Sep 22 09:25:40 2026

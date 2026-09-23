@@ -11,6 +11,7 @@ package axi_pkg;
 	`include "src/verification/axi_pas_mon.sv"
 	`include "src/verification/axi_pas_agnt.sv"
 	`include "src/verification/axi_act_agnt.sv"
+	`include "src/verification/axi_ref_model.sv"
 	`include "src/verification/axi_scrbd.sv"
 	`include "src/verification/axi_subr.sv"
 	`include "src/verification/axi_env.sv"

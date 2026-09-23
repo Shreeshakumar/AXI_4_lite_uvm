@@ -7,11 +7,12 @@ module axi_top();
 	import axi_pkg::*;
 
 	bit ACLK;
-	initial	forever #5 ACLK = !ACLK;
+	initial	forever #1 ACLK = !ACLK;
 
 	axi_interface INF(ACLK);
 
-	axi_rtl DUV(.ACLK(ACLK), 			.ARESETn(INF.ARESETn),													//reser
+	axi_rtl #(.DATA_WIDTH(32), .ADDR_WIDTH(32), .MEM_DEPTH(16), .DEFAULT_PROT(3'b000)) 
+	DUV (		.ACLK(ACLK), 			.ARESETn(INF.ARESETn),													//reser
 				.AWADDR(INF.AWADDR), 	.AWPROT(INF.AWPROT),	.AWVALID(INF.AWVALID),	.AWREADY(INF.AWREADY),	//AXI WRITE ADDRESS
 				.WDATA(INF.WDATA), 		.WSTRB(INF.WSTRB),		.WVALID(INF.WVALID),	.WREADY(INF.WREADY),	//AXI WRITE DATA
 				.BRESP(INF.BRESP),		.BVALID(INF.BVALID),	.BREADY(INF.BREADY),							//AXI WRITE RESPONSE

@@ -2,31 +2,74 @@ class axi_subr extends uvm_subscriber #(trans);
   `uvm_component_utils(axi_subr)
 
   trans req;
-
-  covergroup axi_cg;
+  bit        is_write;
+  bit        is_read;
+  bit [31:0] addr;
+  bit [3:0]  wstrb;
+  bit [1:0]  resp;
+  
+  covergroup axi4l_cg;
     option.per_instance = 1;
-    option.name = "AXI_Coverage";
+    option.name = "axi4l_functional_coverage";
 
-    cp_waddr: coverpoint req.AWADDR {
-      bins a = {1'b1};
-      bins b    = {1'b0};
+    cp_operation_type: coverpoint {is_write, is_read} {
+      bins bin_op_write = {2'b10};
+      bins bin_op_read  = {2'b01};
     }
+
+    cp_address_region: coverpoint addr {
+      bins bin_addr_normal_rw     = {[32'h00:32'h24], 32'h3C};
+      bins bin_addr_read_only     = {32'h28, 32'h2C, 32'h30};
+      bins bin_addr_write_only    = {32'h34, 32'h38};
+      bins bin_addr_out_of_bounds = {[32'h40:32'hFFFFFFFF]};
+    }
+
+    cp_write_strobe: coverpoint wstrb iff (is_write == 1) {
+      bins bin_wstrb_combinations = {[4'b0000:4'b1111]};
+    }
+
+    cp_axi_response: coverpoint resp {
+      bins bin_resp_okay   = {`AXI_OKAY};
+      bins bin_resp_slverr = {`AXI_SLVERR};
+      bins bin_resp_decerr = {`AXI_DECERR};
+    }
+
+    cross_op_x_address: cross cp_operation_type, cp_address_region;
     
+    cross_op_x_response: cross cp_operation_type, cp_axi_response;
+    
+    //cross_address_x_response: cross cp_address_region, cp_axi_response;
+
   endgroup
 
   	function new(string name = "axi_subr", uvm_component parent = null);
    		super.new(name, parent);
-    	axi_cg = new();
+    	axi4l_cg  = new();
   endfunction
 
   virtual function void write(trans t);
-    req = t;
-    axi_cg.sample();
+    if (t.txn_sel[`TXN_BIT_WRITE]) begin
+      is_write = 1; 
+      is_read  = 0;
+      addr     = t.AWADDR;
+      wstrb    = t.WSTRB;
+      resp     = t.BRESP;
+      axi4l_cg.sample();
+    end
+
+    if (t.txn_sel[`TXN_BIT_READ]) begin
+      is_write = 0; 
+      is_read  = 1;
+      addr     = t.ARADDR;
+      wstrb    = 4'b0000;
+      resp     = t.RRESP;
+      axi4l_cg.sample();
+    end
   endfunction
 
   virtual function void report_phase(uvm_phase phase);
     super.report_phase(phase);
-    `uvm_info("COV", $sformatf("ALU Input Coverage: %0.2f%%", axi_cg.get_coverage()), UVM_NONE);
+    `uvm_info("COV", $sformatf("ALU Input Coverage: %0.2f%%", axi4l_cg.get_coverage()), UVM_NONE);
   endfunction
 
 endclass
