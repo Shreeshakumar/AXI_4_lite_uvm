@@ -5,7 +5,6 @@ class axi_env extends uvm_env;
  	axi_pas_agnt 	pas_agt_h;
  	axi_scrbd 		sb_h;
  	axi_subr 		sub_h;
- 	
  	axi_ref_model ref_mod;
 
  	axi_config m_cfg;
