@@ -444,8 +444,6 @@ clean:
 		$(SIM_DIR)/coverage \
 		$(SIM_DIR)/csrc \
 		$(SIM_DIR)/.fsm.sch.verilog.xml \
-		$(SIM_DIR)/logs \
-		$(SIM_DIR)/simv \
 		$(SIM_DIR)/simv.daidir \
 		$(SIM_DIR)/ucli.key \
 		$(SIM_DIR)/vc_hdrs.h \
