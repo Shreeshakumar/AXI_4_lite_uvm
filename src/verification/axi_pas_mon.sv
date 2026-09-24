@@ -19,13 +19,6 @@ class axi_pas_mon extends uvm_monitor;
  	endfunction
 
  	task run_phase(uvm_phase phase);
-		/*forever begin	 
-	    	collect_data();
-			`uvm_info("OUTPUT_MONITOR","OUTPUT MONITOR",UVM_HIGH)
-	   		`uvm_info("OUTPUT_MONITOR",$sformatf("OUTPUT MONITOR\n%s",pas_mon.sprint()),UVM_FULL)
-		end*/
-		
-		//wait (vif.mon_cb.ARESETn === 1'b1);
     	fork 
       		collect_writes(); 
       		collect_reads(); 
@@ -35,76 +28,44 @@ class axi_pas_mon extends uvm_monitor;
  	endtask
  	
  	virtual task collect_writes();
-    forever begin
-      	trans txn = trans::type_id::create("txn");
-      	txn.txn_sel = (1 << `TXN_BIT_WRITE); 
-      	fork
-        	begin
-        	  	while (vif.mon_cb.AWVALID !== 1'b1 || vif.mon_cb.AWREADY !== 1'b1) @(vif.mon_cb);
-        	  	txn.AWADDR = vif.mon_cb.AWADDR; 
-        	  	txn.AWPROT = vif.mon_cb.AWPROT;
-        	  	`uvm_info("MON_TRACE", "ADDRESS HANDSHAKE DONE", UVM_FULL)
-        	end
-        	begin
-        	  	while (vif.mon_cb.WVALID !== 1'b1 || vif.mon_cb.WREADY !== 1'b1) @(vif.mon_cb);
-        	  	txn.WDATA  = vif.mon_cb.WDATA; 
-        	  	txn.WSTRB = vif.mon_cb.WSTRB;
-        	  	`uvm_info("MON_TRACE", "DATA HANDSHAKE DONE", UVM_FULL)
-        	end
-      	join
-      	while (vif.mon_cb.BVALID !== 1'b1 || vif.mon_cb.BREADY !== 1'b1) @(vif.mon_cb);
-      	txn.BRESP = vif.mon_cb.BRESP;
-        `uvm_info("MON_TRACE", "Transaction captured", UVM_FULL)
-      	pas_mon_port.write(txn); 
-    end
+    	forever begin
+    	  	trans txn = trans::type_id::create("txn");
+    	  	txn.txn_sel = (1 << `TXN_BIT_WRITE); 
+    	  	fork
+    	    	begin
+    	    	  	while (vif.mon_cb.AWVALID !== 1'b1 || vif.mon_cb.AWREADY !== 1'b1) @(vif.mon_cb);
+    	    	  	txn.AWADDR = vif.mon_cb.AWADDR; 
+    	    	  	txn.AWPROT = vif.mon_cb.AWPROT;
+    	    	  	`uvm_info("MON_TRACE", "ADDRESS HANDSHAKE DONE", UVM_FULL)
+       	 		end
+       	 		begin
+       	 		  	while (vif.mon_cb.WVALID !== 1'b1 || vif.mon_cb.WREADY !== 1'b1) @(vif.mon_cb);
+        		  	txn.WDATA  = vif.mon_cb.WDATA; 
+        		  	txn.WSTRB = vif.mon_cb.WSTRB;
+        		  	`uvm_info("MON_TRACE", "DATA HANDSHAKE DONE", UVM_FULL)
+        		end
+      		join
+      		while (vif.mon_cb.BVALID !== 1'b1 || vif.mon_cb.BREADY !== 1'b1) @(vif.mon_cb);
+      		txn.BRESP = vif.mon_cb.BRESP;
+        	`uvm_info("MON_TRACE", "Transaction captured", UVM_FULL)
+      		pas_mon_port.write(txn); 
+    	end
   	endtask
 
   	virtual task collect_reads();
-    forever begin
-      	trans txn = trans::type_id::create("txn");
-      	txn.txn_sel = (1 << `TXN_BIT_READ); 
-      	while (vif.mon_cb.ARVALID !== 1'b1 || vif.mon_cb.ARREADY !== 1'b1) @(vif.mon_cb);
-      	txn.ARADDR = vif.mon_cb.ARADDR; 
-      	txn.ARPROT = vif.mon_cb.ARPROT;
-      	`uvm_info("MON_TRACE", "ADDRESS captured", UVM_FULL)
-      	while (vif.mon_cb.RVALID !== 1'b1 || vif.mon_cb.RREADY !== 1'b1) @(vif.mon_cb);
-      	txn.RDATA = vif.mon_cb.RDATA; 
-      	txn.RRESP  = vif.mon_cb.RRESP;
-        `uvm_info("MON_TRACE", "Read captured", UVM_FULL)
-      	pas_mon_port.write(txn);
-    end
+    	forever begin
+      		trans txn = trans::type_id::create("txn");
+      		txn.txn_sel = (1 << `TXN_BIT_READ); 
+      		while (vif.mon_cb.ARVALID !== 1'b1 || vif.mon_cb.ARREADY !== 1'b1) @(vif.mon_cb);
+      		txn.ARADDR = vif.mon_cb.ARADDR; 
+      		txn.ARPROT = vif.mon_cb.ARPROT;
+      		`uvm_info("MON_TRACE", "ADDRESS captured", UVM_FULL)
+      		while (vif.mon_cb.RVALID !== 1'b1 || vif.mon_cb.RREADY !== 1'b1) @(vif.mon_cb);
+      		txn.RDATA = vif.mon_cb.RDATA; 
+      		txn.RRESP  = vif.mon_cb.RRESP;
+        	`uvm_info("MON_TRACE", "Read captured", UVM_FULL)
+      		pas_mon_port.write(txn);
+    	end
   	endtask
-  /*
-	virtual task collect_data();
-		pas_mon=trans::type_id::create("pas_mon");
-		@(vif.mon_cb);
-		 	pas_mon.ARESETn		= vif.mon_cb.ARESETn;
-		 	
-		 	pas_mon.AWADDR		= vif.mon_cb.AWADDR;
-		  	pas_mon.AWPROT		= vif.mon_cb.AWPROT;
-		  	pas_mon.AWVALID		= vif.mon_cb.AWVALID;
-		  	pas_mon.AWREADY		= vif.mon_cb.AWREADY;
-		  	
-		  	pas_mon.WDATA		= vif.mon_cb.WDATA;
-		  	pas_mon.WSTRB		= vif.mon_cb.WSTRB;
-		  	pas_mon.WVALID		= vif.mon_cb.WVALID;
-		  	pas_mon.WREADY		= vif.mon_cb.WREADY;
-
-		  	pas_mon.BRESP 		= vif.mon_cb.BRESP; 
-		  	pas_mon.BVALID		= vif.mon_cb.BVALID;
-		  	pas_mon.BREADY  	= vif.mon_cb.BREADY;
-		  	
-		  	pas_mon.ARADDR		= vif.mon_cb.ARADDR;
-		  	pas_mon.ARPROT		= vif.mon_cb.ARPROT;
-		  	pas_mon.ARVALID		= vif.mon_cb.ARVALID;
-		  	pas_mon.ARREADY		= vif.mon_cb.ARREADY;
-		  	
-		  	pas_mon.RDATA		= vif.mon_cb.RDATA;
-		  	pas_mon.RRESP		= vif.mon_cb.RRESP;
-		  	pas_mon.RVALID		= vif.mon_cb.RVALID;
-		  	pas_mon.RREADY		= vif.mon_cb.RREADY;
-		  	
-		pas_mon_port.write(pas_mon);
-	endtask*/
 endclass	   		
 

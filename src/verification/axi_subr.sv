@@ -43,9 +43,9 @@ class axi_subr extends uvm_subscriber #(trans);
   endgroup
 
   	function new(string name = "axi_subr", uvm_component parent = null);
-   		super.new(name, parent);
-    	axi4l_cg  = new();
-  endfunction
+   		  super.new(name, parent);
+    	  axi4l_cg  = new();
+    endfunction
 
   virtual function void write(trans t);
     if (t.txn_sel[`TXN_BIT_WRITE]) begin

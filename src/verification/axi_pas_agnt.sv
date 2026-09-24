@@ -10,7 +10,6 @@ class axi_pas_agnt extends uvm_agent;
 
   	function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
-    
   		if(!uvm_config_db#(axi_config)::get(this,"","axi_config",m_cfg))
 			`uvm_fatal(get_type_name(),"Output_agt Getting Failed")
     	if(m_cfg.output_agent_is_active==UVM_PASSIVE)

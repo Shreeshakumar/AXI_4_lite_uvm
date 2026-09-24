@@ -8,7 +8,7 @@ class axi_scrbd extends uvm_scoreboard;
 	uvm_tlm_analysis_fifo #(trans)pas_mon_fifo;
 	
 	uvm_tlm_analysis_fifo #(trans) act_fifo;
-  	uvm_tlm_analysis_fifo #(trans) exp_fifo;
+  uvm_tlm_analysis_fifo #(trans) exp_fifo;
 	
 	int pass_count, fail_count, pass, fail;
 

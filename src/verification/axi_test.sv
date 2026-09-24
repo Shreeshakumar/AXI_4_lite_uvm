@@ -26,13 +26,12 @@ class axi_test extends uvm_test;
    		//uvm_top.print_topology();
 	endfunction
 	
-	
 	virtual task reset_duv();
-	begin
-		rst_seq ss;
-		ss=rst_seq::type_id::create("ss");
-		ss.start(env_h.act_agt_h.seqr_h);
-	end
+		begin
+			rst_seq ss;
+			ss=rst_seq::type_id::create("ss");
+			ss.start(env_h.act_agt_h.seqr_h);
+		end
 	endtask
 endclass
 
